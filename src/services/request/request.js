@@ -14,9 +14,7 @@ const cache = setupCache({
   maxAge: 10 * 60 * 1000 // 10 minutes cache
 })
 
-const instance = () => axios.create({
-  baseURL: 'api.openweathermap.org/data/2.5/weather?',
+export default  axios.create({
+  baseURL: 'api.openweathermap.org/data/2.5',
   adapter: cache.adapter
 })
-
-export default instance
