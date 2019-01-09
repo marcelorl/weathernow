@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import App from './components/pages/App'
 import store from './reducers'
 
+import './index.css'
+
 ReactDOM.render(
   <Provider store={store()}>
     <App />

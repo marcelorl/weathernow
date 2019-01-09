@@ -10,7 +10,11 @@ class App extends Component {
   async componentDidMount () {
     const { fetchWeather } = this.props
 
-    await fetchWeather()
+    await Promise.all([
+      fetchWeather('nuuk,gl'),
+      fetchWeather('urubici,br'),
+      fetchWeather('nairobi,ke')
+    ])
   }
 
   render () {
@@ -29,8 +33,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 App.propTypes = {
   fetchWeather: PropTypes.func.isRequired,
   weather: PropTypes.shape({
-    list: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired,
+    cities: PropTypes.shape({}).isRequired,
     error: PropTypes.string
   }).isRequired
 }
