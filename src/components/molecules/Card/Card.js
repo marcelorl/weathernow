@@ -12,8 +12,30 @@ const CardContainer = styled.div`
   text-align: center;
   width: 100%;
   
-  :first-child {
+  :not(:first-child) {
+    .card__footer__info {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    height: 18rem;
     margin-top: 0;
+    width: 15rem;
+    
+    :not(:nth-child(2)) {
+      height: 15rem;
+    
+      .card__footer__info {
+        display: none;
+      }
+    }
+    
+    :nth-child(2) {
+      .card__footer__info {
+        display: flex;
+      }
+    }
   }
 `
 
@@ -41,7 +63,7 @@ const CardFooter = styled.div`
 const CardFooterInfo = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.7rem;
 `
 
 const Card = ({ city }) =>
@@ -49,7 +71,7 @@ const Card = ({ city }) =>
     <CardHeader>{city.name}</CardHeader>
     <CardContent value={city.temp}>{Math.round(city.temp)}°</CardContent>
     <CardFooter>
-      <CardFooterInfo>
+      <CardFooterInfo className="card__footer__info">
         <Info title='humidity' value={city.humidity} unit='%' />
         <Info title='pressure' value={city.pressure} unit='hPa' />
       </CardFooterInfo>

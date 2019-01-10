@@ -5,10 +5,17 @@ import Header from '../../atoms/Header'
 import Card from '../../molecules/Card'
 
 const Content = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 100%;
+  }
 `
 
 const renderCities = cities =>
