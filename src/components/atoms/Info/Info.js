@@ -13,7 +13,7 @@ const Title = styled.div`
 `
 
 const InfoContent = styled.div`
-  color: #333333;
+  color: #737C84;
   font-size: 1rem;
   
   span {

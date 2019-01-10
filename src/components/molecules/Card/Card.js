@@ -41,7 +41,7 @@ const CardContainer = styled.div`
 
 const CardHeader = styled.div`
   border-bottom: 1px solid #ebebeb;
-  color: #333333;
+  color: #737C84;
   padding: 0.8rem 0;
 `
 
