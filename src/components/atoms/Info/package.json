@@ -1,0 +1,5 @@
+{
+  "main": "./Info.js",
+  "name": "Info",
+  "private": true
+}

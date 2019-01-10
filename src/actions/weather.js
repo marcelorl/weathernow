@@ -7,6 +7,6 @@ export const requestWeatherSuccess = createAction('WEATHER_SUCCESS_FETCH')
 
 export const fetchWeather = city =>
   dispatch =>
-    axios.get(`/weather?q=${city}&APPID=${process.env.REACT_APP_APPID}`)
-      .then(({ data }) => dispatch(requestWeatherSuccess({ city, data })))
+    axios.get(`/weather?q=${city}&APPID=${process.env.REACT_APP_APPID}&units=metric`)
+      .then(({ data }) => dispatch(requestWeatherSuccess(data)))
       .catch(err => dispatch(requestWeatherFail(new Error(err))))
