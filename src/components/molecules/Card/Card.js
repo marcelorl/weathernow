@@ -45,9 +45,9 @@ const CardHeader = styled.div`
   padding: 0.8rem 0;
 `
 
-const CardContent = styled.div.attrs({
-  color: ({ value }) => value <= 5 ? '69a3ff' : value > 25 ? 'ed1946' : 'ff9632'
-})`
+const CardContent = styled.div.attrs(({ value }) => ({
+  color: value <= 5 ? '69a3ff' : value > 25 ? 'ed1946' : 'ff9632'
+}))`
   color: #${({ color }) => color};
   font-size: 5rem;
   padding: 2rem 0;
