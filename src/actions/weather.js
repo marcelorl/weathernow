@@ -9,14 +9,14 @@ export const requestWeatherFail = createAction('WEATHER_FAIL_FETCH')
 export const requestWeatherSuccess = createAction('WEATHER_SUCCESS_FETCH')
 
 export const fetchWeather = (city, injection) => {
-  const { api } = { ...dependencies, injection }
+  const { api } = Object.assign({}, dependencies, injection)
 
   return dispatch => {
     dispatch(requestWeather(city))
 
     return api
       .get(`/weather?q=${city}&APPID=${process.env.REACT_APP_OPENWEATHER_APPID}&units=metric`)
-      .then(({data}) => dispatch(requestWeatherSuccess({city, data})))
+      .then(({ data }) => dispatch(requestWeatherSuccess({ city, data })))
       .catch(err => dispatch(requestWeatherFail(new Error(err))))
   }
 }

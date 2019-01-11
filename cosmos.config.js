@@ -2,6 +2,5 @@ module.exports = {
   containerQuerySelector: '#root',
   webpackConfigPath: 'react-scripts/config/webpack.config.dev',
   publicPath: 'public',
-  proxiesPath: 'src/cosmos.proxies',
-  globalImports: ['bootstrap/dist/css/bootstrap.css']
+  proxiesPath: 'src/cosmos.proxies'
 };

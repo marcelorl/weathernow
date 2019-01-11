@@ -16,7 +16,7 @@ const Loader = ({ children, loading }) => {
   if (loading) {
     return (
       <LoaderContainer>
-        <img src={img} alt="loader" />
+        <img src={img} alt='loader' />
       </LoaderContainer>
     )
   }

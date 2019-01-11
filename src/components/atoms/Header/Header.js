@@ -22,7 +22,7 @@ const HeaderContainer = styled.div`
 
 const Header = () =>
   <HeaderContainer>
-    <img src={logo} className="weathernow-logo" alt="logo" />
+    <img src={logo} className='weathernow-logo' alt='logo' />
   </HeaderContainer>
 
 export default Header

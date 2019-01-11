@@ -76,7 +76,7 @@ const Card = ({ city: { data, loading } }) =>
     <Loader loading={loading}>
       <CardContent value={data.temperature}>{Math.round(data.temperature)}°</CardContent>
       <CardFooter>
-        <CardFooterInfo className="card__footer__info">
+        <CardFooterInfo className='card__footer__info'>
           <Info title='humidity' value={data.humidity} unit='%' />
           <Info title='pressure' value={Math.round(data.pressure)} unit='hPa' />
         </CardFooterInfo>

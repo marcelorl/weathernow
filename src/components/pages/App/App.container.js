@@ -20,7 +20,7 @@ class App extends Component {
 
     await runActions()
 
-    setInterval(async () => await runActions(), tenMinutesInterval)
+    setInterval(() => runActions(), tenMinutesInterval)
   }
 
   render () {

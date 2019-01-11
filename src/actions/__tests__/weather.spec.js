@@ -46,7 +46,7 @@ describe('#weather', () => {
     const api = {
       get: jest
         .fn()
-        //.mockImplementationOnce(() => Promise.resolve(apiResponse))
+        .mockImplementationOnce(() => Promise.resolve(apiResponse))
         .mockImplementationOnce(() => Promise.reject(err))
     }
 
@@ -59,7 +59,7 @@ describe('#weather', () => {
     })
 
     describe('#fetchWeather', () => {
-      xit('should fetchWeather success', async () => {
+      it('should fetchWeather success', async () => {
         const expectedActions = [
           { type: 'WEATHER_REQUEST_FETCH', payload: 'city' },
           { type: 'WEATHER_SUCCESS_FETCH', payload: { data: apiResponse.data, city: 'city' } }
