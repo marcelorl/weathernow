@@ -18,14 +18,14 @@ const Content = styled.div`
   }
 `
 
-const renderCities = cities =>
-  Object.keys(cities).map(key => <Card city={cities[key]} key={key} />)
+const renderWeatherCards = weather =>
+  Object.keys(weather).map(key => <Card city={weather[key]} key={key} />)
 
 const App = ({ weather }) =>
   <div>
     <Header />
     <Content>
-      {renderCities(weather.cities)}
+      {renderWeatherCards(weather)}
     </Content>
   </div>
 

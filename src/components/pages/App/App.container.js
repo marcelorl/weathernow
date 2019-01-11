@@ -9,12 +9,18 @@ import AppTemplate from '../../templates/App'
 class App extends Component {
   async componentDidMount () {
     const { fetchWeather } = this.props
+    const tenMinutesInterval = 600000
 
-    await Promise.all([
-      fetchWeather('nuuk,gl'),
-      fetchWeather('urubici,br'),
-      fetchWeather('nairobi,ke')
-    ])
+    const runActions = () =>
+      Promise.all([
+        fetchWeather('nuuk,gl'),
+        fetchWeather('urubici,br'),
+        fetchWeather('nairobi,ke')
+      ])
+
+    await runActions()
+
+    setInterval(async () => await runActions(), tenMinutesInterval)
   }
 
   render () {
@@ -32,10 +38,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 App.propTypes = {
   fetchWeather: PropTypes.func.isRequired,
-  weather: PropTypes.shape({
-    cities: PropTypes.shape({}).isRequired,
-    error: PropTypes.string
-  }).isRequired
+  weather: PropTypes.shape({}).isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

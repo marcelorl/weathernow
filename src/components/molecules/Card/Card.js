@@ -2,11 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Info from '../../atoms/Info'
+import Loader from '../../atoms/Loader'
 
 const CardContainer = styled.div`
   background: #ffffff;
   border-radius: 5px;
   box-shadow: 1px 1px 5px #b4b4b4;
+  display: flex;
+  flex-direction: column;
   font-size: 1.2rem;
   margin-top: 2rem;
   text-align: center;
@@ -66,17 +69,19 @@ const CardFooterInfo = styled.div`
   margin-bottom: 0.7rem;
 `
 
-const Card = ({ city }) =>
+const Card = ({ city: { data, loading } }) =>
   <CardContainer>
-    <CardHeader>{city.name}</CardHeader>
-    <CardContent value={city.temp}>{Math.round(city.temp)}°</CardContent>
-    <CardFooter>
-      <CardFooterInfo className="card__footer__info">
-        <Info title='humidity' value={city.humidity} unit='%' />
-        <Info title='pressure' value={city.pressure} unit='hPa' />
-      </CardFooterInfo>
-      <div>Updated at {city.createdAt}</div>
-    </CardFooter>
+    <CardHeader>{data.name}</CardHeader>
+    <Loader loading={loading}>
+      <CardContent value={data.temperature}>{Math.round(data.temperature)}°</CardContent>
+      <CardFooter>
+        <CardFooterInfo className="card__footer__info">
+          <Info title='humidity' value={data.humidity} unit='%' />
+          <Info title='pressure' value={data.pressure} unit='hPa' />
+        </CardFooterInfo>
+        <div>Updated at {data.createdAt}</div>
+      </CardFooter>
+    </Loader>
   </CardContainer>
 
 export default Card

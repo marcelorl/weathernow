@@ -1,20 +1,28 @@
 import { handleActions } from 'redux-actions'
 
 import {
+  requestWeather,
   requestWeatherFail,
   requestWeatherSuccess
 } from '../actions/weather'
 
 const INITIAL_STATE = {
-  cities: {}, error: null
+
 }
 
 const reducer = handleActions({
+  [requestWeather]: (state, action) => ({
+    ...state,
+    ...{[action.payload]: {
+      loading: true,
+      data: {}
+    }}
+  }),
   [requestWeatherFail]: (state, action) => ({
-    error: `Error - ${action.payload}`
+    error: action.payload
   }),
   [requestWeatherSuccess]: (state, action) => {
-    const { main: { humidity, pressure, temp }, name, sys: { country } } = action.payload
+    const { main: { humidity, pressure, temp }, name, sys: { country } } = action.payload.data
 
     const date = new Date()
     const isPM = date.getHours() >= 12
@@ -22,15 +30,16 @@ const reducer = handleActions({
     const hours = date.getHours() - (isPM && !isMidday ? 12 : 0)
 
     return {
-      cities: {
-        ...state.cities,
-        ...{[action.payload.id]: {
+      ...state,
+      [action.payload.city]: {
+        loading: false,
+        data: {
           humidity,
           pressure,
-          temp,
+          temperature: temp,
           name: `${name}, ${country}`,
           createdAt: `${hours}:${date.getMinutes()}:${date.getSeconds()} ${isPM ? 'PM' : 'AM'}`
-        }}
+        }
       }
     }
   }
