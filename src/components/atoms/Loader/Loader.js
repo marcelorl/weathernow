@@ -4,8 +4,11 @@ import styled from 'styled-components'
 import img from './loader.svg'
 
 const LoaderContainer = styled.div`
-  align-self: center;
-  padding: 1rem 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
   width: 100%;
 `
 

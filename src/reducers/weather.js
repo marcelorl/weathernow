@@ -13,13 +13,18 @@ const INITIAL_STATE = {
 const reducer = handleActions({
   [requestWeather]: (state, action) => ({
     ...state,
-    ...{[action.payload]: {
+    [action.payload]: {
       loading: true,
       data: {}
-    }}
+    }
   }),
   [requestWeatherFail]: (state, action) => ({
-    error: action.payload
+    ...state,
+    [action.payload]: {
+      loading: false,
+      data: {},
+      error: action.payload
+    }
   }),
   [requestWeatherSuccess]: (state, action) => {
     const { main: { humidity, pressure, temp }, name, sys: { country } } = action.payload.data

@@ -7,11 +7,12 @@ import Loader from '../../atoms/Loader'
 const CardContainer = styled.div`
   background: #ffffff;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px #b4b4b4;
+  box-shadow: 0px 1px 8px #d4d4d4;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
   margin-top: 2rem;
+  position: relative;
   text-align: center;
   width: 100%;
   
@@ -77,7 +78,7 @@ const Card = ({ city: { data, loading } }) =>
       <CardFooter>
         <CardFooterInfo className="card__footer__info">
           <Info title='humidity' value={data.humidity} unit='%' />
-          <Info title='pressure' value={data.pressure} unit='hPa' />
+          <Info title='pressure' value={Math.round(data.pressure)} unit='hPa' />
         </CardFooterInfo>
         <div>Updated at {data.createdAt}</div>
       </CardFooter>

@@ -10,8 +10,8 @@ export const fetchWeather = city =>
   dispatch => {
     dispatch(requestWeather(city))
 
-    api()
-      .get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_OPENWEATHER_APPID}&units=metric`)
+    api
+      .get(`/weather?q=${city}&APPID=${process.env.REACT_APP_OPENWEATHER_APPID}&units=metric`)
       .then(({data}) => dispatch(requestWeatherSuccess({ city, data })))
       .catch(err => dispatch(requestWeatherFail(new Error(err))))
   }
