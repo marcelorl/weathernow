@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Header atom renders component 1`] = `
+.c0 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ffffff;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.7rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.c0 img {
+  height: 100%;
+}
+
+<Header
+  title="Layer"
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  align-items: center;
+  background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  padding: 0.7rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%
+  
+  img {
+    height: 100%;
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <img
+          alt="logo"
+          className="weathernow-logo"
+          src="logo.svg"
+        />
+      </div>
+    </StyledComponent>
+  </styled.div>
+</Header>
+`;
