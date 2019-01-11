@@ -15,7 +15,7 @@ const cache = setupCache({
 })
 
 const instance = axios.create({
-  baseURL: 'http://api.openweathermap.org/data/2.5',
+  baseURL: '//api.openweathermap.org/data/2.5',
   adapter: cache.adapter
 })
 
