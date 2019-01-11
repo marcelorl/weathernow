@@ -1,11 +1,13 @@
 # weathernow
 
+## Overview
+
 Application to show the current weather of:
  - Uribici, BR;
  - Nuuk, GL;
  - Nairobi, KE
  
-### Tools
+## Tools
 
  - React
  - Redux
@@ -14,20 +16,20 @@ Application to show the current weather of:
  - Atomic Design
  - Openweather api
  
-### Installation
+## Installation
 
 ```
 $ cp .env.local.example .env.local // paste your openweather id here
 $ npm i
 ```
  
-### Usage
+## Usage
  
 ```
 $ npm start
 ```
 
-### Test
+## Test
 
 ```
 $ npm test
