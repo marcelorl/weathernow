@@ -19,7 +19,6 @@ Application to show the current weather of:
 ## Installation
 
 ```
-$ cp .env.local.example .env.local // paste your openweather id here
 $ npm i
 ```
  
