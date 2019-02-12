@@ -1,5 +1,7 @@
 # weathernow
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/marcelorl/weathernow.svg)](https://greenkeeper.io/)
+
 ## Overview
 
 Application to show the current weather of:
