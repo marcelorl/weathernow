@@ -1,0 +1,19 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "src/components/atoms/Header/package.json",
+        "src/components/atoms/Info/package.json",
+        "src/components/atoms/Loader/package.json",
+        "src/components/molecules/Card/package.json",
+        "src/components/pages/App/package.json",
+        "src/components/templates/App/package.json",
+        "src/reducers/package.json",
+        "src/services/configureMockStore/package.json",
+        "src/services/history/package.json",
+        "src/services/request/package.json"
+      ]
+    }
+  }
+}
